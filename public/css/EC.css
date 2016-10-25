@@ -1,0 +1,143 @@
+body {
+    margin: 0;
+    background-color: black;
+    color: white;
+}
+
+.center {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    display: table;
+    margin-left: 26%;
+}
+
+.title {
+    text-align: center;
+}
+
+.center h1 {
+    vertical-align: middle;
+    margin: 0;
+    display: table-cell;
+}
+
+.category {
+    font-size: 20px;
+    margin: 0;
+}
+
+.content {
+    position: relative;
+    text-align: right;
+    width: 300px;
+    height: 200px;
+    float: left;
+    margin-left: auto;
+}
+
+.img {
+    width: auto;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+    float: left;
+    margin-left: 200px;
+}
+
+main {
+    display: table;
+}
+
+main div {
+    display: table-cell;
+}
+
+.drink {
+    display: inline-block;
+}
+
+.info1 {
+    position: relative;
+    background-color: ##575859;
+    width: 400px;
+    height: 150px;
+    top: 90px;
+    margin-bottom: 500px;
+    margin-left: 33%;
+}
+
+.info1 tr td {
+    border-bottom: 2px #95a099 dotted;
+}
+
+.info2 {
+    height: 35px;
+}
+
+.public {
+    float: left;
+    width: 33%;
+    height: 300px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.Product {
+    position: relative;
+    margin: 0;
+    padding-left: 300px;
+    padding-right: 100px;
+    width: auto;
+    height: auto;
+}
+
+.Description {
+    padding: 0;
+    line-height: 1.6;
+    color: #666;
+    border: 0;
+    font-size: 13px;
+}
+
+.pict {
+    width: auto;
+    height: 200px;
+}
+
+.cart_button {
+    width: 100%;
+    height: 40px;
+    text-align: center;
+}
+
+.cart_button button {
+    display: inline-block;
+    width: 300px;
+    height: 40px;
+}
+
+.cart_table {
+    text-align: center;
+}
+
+.cart_td {
+    width: 200px;
+    border-bottom: 2px #95a099 dotted;
+}
+
+.cart_cecter {}
+
+.menu_botton button{
+  display: inline-block;
+  width:100px;
+  height: 40px;
+}
+
+.menu_botton{
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  margin: auto;
+  left: 0;
+  right: 0;
+}
