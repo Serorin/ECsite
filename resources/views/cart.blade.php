@@ -12,19 +12,28 @@
 
 <br>
 <br>
+
+      @if($items)
       <div class="center">
         <table class="cart_table">
           <tr class="info2">
             <td>商品名</td>
             <td>価格</td>
           </tr>
+          @foreach($items as $index=>$items)
           <tr>
-            <td class="cart_td">抹茶白玉フロートラテ</td>
-            <td class="cart_td">￥616</td>
-            <td class="cart_td">削除</td>
+            <td class="cart_td">{{$items->name}}</td>
+            <td class="cart_td">￥{{$items->price}}</td>
+            <td class="cart_td"><button onclick="location.href='/delete?index={{$index}}'">削除</button></td>
           </tr>
+          @endforeach
         </table>
       </div>
+      @else
+      <div class="cart_center">
+        <p>商品は入っていません。</p>
+      </div>
+      @endif
 <br>
         <div class="cart_button">
           <button type="button" name="button" onclick="location.href='/'">買い物を続ける</button>

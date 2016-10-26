@@ -73,3 +73,28 @@ Route::get('/menu',function(Request $request){
   }
   return view("menu",["menus"=>$Item]);
 });
+
+//カートに入れる
+Route::post('/cart',function(Request $request){
+  $id = $request->get("id");//idを取得
+  $item = DB::table('items')->where('id',$id)->first();//idが一致するものをitemsテーブルから検索、取得
+  $items = session()->get("items",[]);//セッションデータを取得、nullの場合は空の配列
+  $items[] = $item;//取得したデータにオブジェクトを保存
+  session()->put("items",$items);
+  return redirect("/cart");//カートのページヘリダイレクト
+});
+
+//カートの中を一覧表示
+Route::get('/cart',function(){
+  $items = session()->get("items",[]);//セッションデータを取得、nullの場合は空の配列
+  return view("cart",["items"=>$items]);
+});
+
+//商品を削除
+Route::get('/delete',function(Request $request){
+  $index = $request -> get("index");//削除した商品のindexを取得
+  session()->forget("items.".$index);//sessionから選んだ商品を削除。例えば$items[0]の削除はitems.0と指定できる
+  return redirect("/cart");
+});
+
+//カートを空にする

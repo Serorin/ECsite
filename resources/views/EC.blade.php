@@ -56,17 +56,13 @@
     <div class="public">
         <a href="/menu?id=5"><img class = "pict" src="/img/抹茶白玉フロートラテ.png"></a>
         <p>抹茶白玉フロートラテ</p>
-        <p>ICE</p>
-        <p>レギュラー ￥616</p>
-        <p>ラージ ￥702</p>
+        <p>￥616</p>
     </div>
 
     <div class="public">
         <a href="/menu?id=6"><img class = "pict" src="/img/抹茶白玉あずきラテ.png"></a>
         <p>抹茶白玉あずきラテ</p>
-        <p>HOT/ICE</p>
-        <p>レギュラー ￥616</p>
-        <p>ラージ ￥702</p>
+        <p>￥616</p>
     </div>
   </div>
 

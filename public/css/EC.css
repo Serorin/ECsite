@@ -17,7 +17,7 @@ body {
 }
 
 .center h1 {
-    vertical-align: middle;
+  vertical-align: middle;
     margin: 0;
     display: table-cell;
 }
@@ -125,9 +125,13 @@ main div {
     border-bottom: 2px #95a099 dotted;
 }
 
-.cart_cecter {}
-
 .menu_botton button{
+  display: inline-block;
+  width:100px;
+  height: 40px;
+}
+
+.menu_botton input{
   display: inline-block;
   width:100px;
   height: 40px;
@@ -140,4 +144,8 @@ main div {
   margin: auto;
   left: 0;
   right: 0;
+}
+
+.cart_center{
+  text-align: center;
 }
