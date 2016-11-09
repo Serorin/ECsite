@@ -25,6 +25,7 @@
             <td class="cart_td">{{$items->name}}</td>
             <td class="cart_td">￥{{$items->price}}</td>
             <td class="cart_td"><button onclick="location.href='/delete?index={{$index}}'">削除</button></td>
+            <td class="cart_td"><button onclick="location.href='/delete/all?index={{$index}}'">全削除</button></td>
           </tr>
           @endforeach
         </table>

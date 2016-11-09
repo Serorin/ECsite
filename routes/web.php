@@ -74,27 +74,35 @@ Route::get('/menu',function(Request $request){
   return view("menu",["menus"=>$Item]);
 });
 
+
 //カートに入れる
 Route::post('/cart',function(Request $request){
-  $id = $request->get("id");//idを取得
-  $item = DB::table('items')->where('id',$id)->first();//idが一致するものをitemsテーブルから検索、取得
-  $items = session()->get("items",[]);//セッションデータを取得、nullの場合は空の配列
-  $items[] = $item;//取得したデータにオブジェクトを保存
-  session()->put("items",$items);
-  return redirect("/cart");//カートのページヘリダイレクト
+  $id = $request->get("id");
+  $cart = new \App\Service\CartService();
+  $cart->addItem($id);
+  return redirect("/cart");//カートページへのリダイレクト
 });
+
 
 //カートの中を一覧表示
 Route::get('/cart',function(){
-  $items = session()->get("items",[]);//セッションデータを取得、nullの場合は空の配列
-  return view("cart",["items"=>$items]);
+  $cart = new \App\Service\CartService();
+  return view("cart",[//データを渡してビューを表示
+    "items"=>$cart->getItems()
+  ]);
 });
 
 //商品を削除
 Route::get('/delete',function(Request $request){
-  $index = $request -> get("index");//削除した商品のindexを取得
-  session()->forget("items.".$index);//sessionから選んだ商品を削除。例えば$items[0]の削除はitems.0と指定できる
+  $index = $request->get("index");//削除した商品のindexを取得
+  $cart = new \App\Service\CartService();
+  $cart->removeItem($index);
   return redirect("/cart");
 });
 
 //カートを空にする
+Route::get('/delete/all',function(){
+  $cart = new \App\Service\CartService();
+  $cart->clear();
+  return redirect("/cart");//カートページヘのリダイレクト
+});
